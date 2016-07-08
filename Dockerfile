@@ -16,3 +16,4 @@ RUN \
     python -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     pip install --upgrade pip setuptools
+RUN pip install  --pre "buildbot[bundle]"
