@@ -1,6 +1,7 @@
 FROM qnib/alpn-python
 
-ENV security_updates_as_of 2016-06-20
+ENV security_updates_as_of=2016-06-20 \
+    BUILDBOT_VER=0.8.12
 # We install as much as possible python packages from the distro in order to avoid
 # having to pull gcc for building native extensions
 # Some packages are at the moment (06/2016) only available on @testing
@@ -11,6 +12,7 @@ RUN \
     py-pip \
     py-psycopg2 py-twisted py-cryptography \
     py-service_identity@testing py-sqlalchemy@testing \
+    git make \
     gosu@testing dumb-init@testing\
     py-jinja2 && \
     python -m ensurepip && \
