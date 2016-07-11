@@ -15,4 +15,4 @@ RUN \
     py-jinja2 && \
     python -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip 
-#RUN pip install  --pre "buildbot[bundle]==${BUILDBOT_VER}"
+RUN pip install  --pre "buildbot[bundle]"
