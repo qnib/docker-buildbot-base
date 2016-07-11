@@ -8,8 +8,6 @@ ENV security_updates_as_of=2016-06-20 \
 RUN \
     echo @testing http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
     apk add --no-cache \
-    python \
-    py-pip \
     py-psycopg2 py-twisted py-cryptography \
     py-service_identity@testing py-sqlalchemy@testing \
     git make \
@@ -18,4 +16,4 @@ RUN \
     python -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     pip install --upgrade pip setuptools
-RUN pip install  --pre "buildbot[bundle]"
+RUN pip install  --pre "buildbot[bundle]==${BUILDBOT_VER}"
